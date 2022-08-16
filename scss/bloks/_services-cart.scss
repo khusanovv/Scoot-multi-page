@@ -1,0 +1,9 @@
+.services-cart{
+    @media only screen and (max-width:1280px) {
+        .services-cart{
+            margin-top: 112px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

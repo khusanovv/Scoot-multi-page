@@ -1,0 +1,29 @@
+.header__button{
+    margin-left: 100px;
+    .button__item{
+        @include button;
+        .button__link{
+            text-decoration: none;
+            display: inline-block;
+            color: #fff;
+            
+         }
+        &:hover{
+            background-color: #fff;
+            color: $color-btn;
+            border-color: $color-btn;
+            border: 3px solid $color-btn;
+            .button__link{
+                color: $color-btn;
+            }
+        }
+    }
+    @media only screen and (max-width:$tablet) {
+        .header__button{
+            margin-left: 0 !important;
+        }
+    }
+    @media only screen and(max-width:$mobile) {
+        display: none;
+    }   
+}

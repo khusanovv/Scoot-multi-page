@@ -1,0 +1,36 @@
+.nav {
+     margin-right: auto;
+     padding-left: 58px;
+     @media only screen and (max-width:$mobile) {
+      display: none;
+  }
+  }
+  
+  .nav__list {
+    @include reset-list;
+    display: flex;
+    gap: 32px;
+
+    .nav__list-item{
+      
+      .nav__link{
+        
+        display: inline-block;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 25px;
+        color: $accent-color;
+        text-decoration: none;
+        @media only screen and (max-width:1280px) {
+          // margin-left: -40px;
+      }
+        &:hover{
+          color: $color-btn;
+        }
+      }
+    }
+    
+  }
+  
+  

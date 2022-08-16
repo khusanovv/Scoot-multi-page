@@ -1,0 +1,192 @@
+
+.header {
+
+  .header__container {
+      padding: 21px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #FFFFFF;
+  }
+
+  .header__logo {
+      padding: 15px 0;
+      flex-shrink: 0;
+      margin-right: 30px;
+  }
+
+  .header__nav {
+      max-width: 950px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      white-space: nowrap;
+  }
+
+  .header__nav-list {
+      margin: 0;
+      margin-right: 30px;
+      padding: 0;
+      max-width: 249px;
+      width: 100%;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .header__nav-link {
+      text-decoration: none;
+      font-size: 15px;
+      line-height: 25px;
+      color: #939CAA;
+  }
+
+  .header__nav-link:hover {
+      opacity: 0.8;
+  }
+
+  .header__nav-link:active {
+      color: #FCB72B;
+  }
+
+  .header__hamburger {
+      width: 20px;
+      height: 16px;
+      border: none;
+      background-color: transparent;
+      display: none;
+      background-image: url("../../img/burger.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      transition: all 0.4s;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+      position: relative;
+
+      .header__container {
+          padding: 10px 20px;
+      }
+
+      .header__logo {
+          order: 2;
+          margin: 0 auto
+      }
+
+      .header__nav {
+          display: none;
+      }
+
+      .header__hamburger {
+          display: inline-block;
+          order: 1;
+      }
+  }
+  .header--open{
+    z-index: 12;
+    position: relative;
+    
+    
+  }
+  .header--open .header__nav {
+      padding: 64px 0 24px 32px;
+      width: unset;
+      width: 75%;
+    //   height: calc(100& - 50px);
+      min-height: 650px;
+      display: block;
+      position: absolute;
+      top: 100%;
+      transform: translateY(22px);
+      left: 0;
+      z-index: 1;
+      background: #333A44;
+      overflow: hidden;
+      
+      &::after{
+        content: "Get Scootin";
+        position: absolute;
+        color:#fff;
+        bottom: 24px;
+        left: 32px;
+        width: 192px;
+        height: 53px;
+        background-color: #FCB72B;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Space Mono';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 25px;
+        &:hover{
+          color: #333A44;
+        }
+        
+      }
+  }
+
+  .header--open .header__nav-list {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .header--open .header__nav-item{
+      margin-bottom: 24px;
+  }
+
+  .header--open .header__nav-link {
+      font-size: 18px;
+      color: #E5ECF4;
+  }
+
+  .header--open .header__buttom {
+      margin-bottom: 24px;
+      position: absolute;
+      bottom: 0;
+  }
+
+  .header--open .header__hamburger {
+      background-image: url("../../img/burger-x.svg");
+      transition: all 0.4s;
+  }
+}
+.header__button{
+  margin-left: 100px;
+
+  .button__item{
+      @include button;
+      .button__link{
+          text-decoration: none;
+          display: inline-block;
+          color: #fff;
+          padding: 14px 39px;
+          &:hover{
+            padding: 11px 36px;
+          }
+          
+       }
+      &:hover{
+          background-color: #fff;
+          color: $color-btn;
+          border-color: $color-btn;
+          border: 3px solid $color-btn;
+          .button__link{
+              color: $color-btn;
+          }
+      }
+  }
+  @media only screen and (max-width:$tablet) {
+      .header__button{
+          margin-left: 0 !important;
+      }
+  }
+  @media only screen and(max-width:$mobile) {
+      display: none;
+  }   
+}
